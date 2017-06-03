@@ -17,21 +17,21 @@ options {
   SANITY_CHECK = true;
   FORCE_LA_CHECK = false;
 }
-
-PARSER_BEGIN(HilferufParser)
-
-public class HilferufParser {
-
+ 
+PARSER_BEGIN(Example)
+ 
+public class Example {
+ 
   public static void main(String args[]) throws ParseException {
     System.out.println("Beenden Sie die Eingabe durch Return und dann Ctrl-Z (Windows) bzw. Ctrl-D (Unix):");
-    HilferufParser parser = new HilferufParser(System.in);
+    Example parser = new Example(System.in);
     parser.Input();
   }
-
+ 
 }
-
-PARSER_END(HilferufParser)
-
+ 
+PARSER_END(Example)
+ 
 SKIP :
 {
   " "
@@ -39,32 +39,92 @@ SKIP :
 | "\n"
 | "\r"
 }
-
+ 
 <DEFAULT> MORE : 
 { 
-  "a" : A
-| "b" : END  
+    <LATITUDE>: BREIT
+|   <WRONG> : ERR
+|    <HASH> : RAUTE  
 }
-
-<A> MORE :
+ 
+<ERR> MORE:
 {
-  "a" : DEFAULT
-| "b" : END
+    <RIGHT>: ERR
+|    <WRONG>: ERR
+|    <HASH>: DEFAULT
 }
-
+<RAUTE> MORE:
+{
+    <RIGHT>: RAUTE
+|    <WRONG>: RAUTE
+|    <HASH>: DEFAULT
+}
+ 
+<BREIT> MORE:
+{
+    <LONGITUDE>: LAENG
+|    <WRONG>: ERR
+|    <HASH>: DEFAULT
+}
+ 
+<LAENG> MORE:
+{
+    <LONGITUDE>: RAUTE
+|    <WRONG>: ERR
+|    <HASH>: SOSCHEIß
+}
+ 
+ 
 <END> MORE :
 {
-  "a" : A
-| "b" : A
+  "a" : End
+| "b" : End 
 }
-
+ 
+ 
 <END> TOKEN :
 {
-  <Wort : ";"> : DEFAULT
+  <Wort : "."> : DEFAULT
 }
-
+<WRONG> TOKEN :
+{
+<A : "._#">     
+|<B : "_...#"> 
+|<C : "_._.#")> 
+|<D : "_..#")> 
+|<E : ".#")> 
+|<F : ".._.#"> 
+|<G : (\_{2}\.)\#)> 
+|<H : (\.{4})\#)> 
+|<I : (\.{2})\#)> 
+|<J : (\.\_{3})\#)> 
+|<K : (\_\.\_)\#)> 
+|<L : (\.\_\.{2})\#)> 
+|<M : (\_{2})\#)> 
+|<P : (\.\_{2}\.)\#)> 
+|<Q : (\_{2}\.\_)\#)> 
+|<R : (\.\_\.)\#)> 
+|<T : (\_)\#)> 
+|<U : (\.{2}\_)\#)> 
+|<V : (\.{3}\_)\#)> 
+|<X : (\_\.{2}\_)\#)> 
+|<Y : (\_\.\_{2})\#)>
+|<Z : (\_{2}\.{2})\#)> 
+}
+<RIGHT> TOKEN :
+{
+<N : (\_\.)\#)> 
+|<O : (\_{3})\#)> 
+|<S : (\.{3})\#)> 
+|<W : (\.\_{2})\#)>
+|<HASH: (\#)> 
+|<LATITUDE: ^(?:90(?:(?:\°0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\°[0-9]{1,2}\.[0-9]{1,3})?)\#)$ >
+|<LONGITUDE: ^(?:180(?:(?:\°0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\°[0-9]{1,2}\.[0-9]{1,3})?)\#)$>
+}
+ 
 void Input() :
 {}
 {
-  <Wort> <EOF>
+  ((<Latitude><S|N><Longitude><O|W>)((<S>{n})<O>(<S>{n}))) <EOF>
 }
+ 
