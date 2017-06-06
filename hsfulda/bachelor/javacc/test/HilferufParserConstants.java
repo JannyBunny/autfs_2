@@ -10,14 +10,80 @@ public interface HilferufParserConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int Wort = 11;
+  int A = 5;
+  /** RegularExpression Id. */
+  int B = 6;
+  /** RegularExpression Id. */
+  int C = 7;
+  /** RegularExpression Id. */
+  int D = 8;
+  /** RegularExpression Id. */
+  int E = 9;
+  /** RegularExpression Id. */
+  int F = 10;
+  /** RegularExpression Id. */
+  int G = 11;
+  /** RegularExpression Id. */
+  int H = 12;
+  /** RegularExpression Id. */
+  int I = 13;
+  /** RegularExpression Id. */
+  int J = 14;
+  /** RegularExpression Id. */
+  int K = 15;
+  /** RegularExpression Id. */
+  int L = 16;
+  /** RegularExpression Id. */
+  int M = 17;
+  /** RegularExpression Id. */
+  int P = 18;
+  /** RegularExpression Id. */
+  int Q = 19;
+  /** RegularExpression Id. */
+  int R = 20;
+  /** RegularExpression Id. */
+  int T = 21;
+  /** RegularExpression Id. */
+  int U = 22;
+  /** RegularExpression Id. */
+  int V = 23;
+  /** RegularExpression Id. */
+  int X = 24;
+  /** RegularExpression Id. */
+  int Y = 25;
+  /** RegularExpression Id. */
+  int Z = 26;
+  /** RegularExpression Id. */
+  int N = 27;
+  /** RegularExpression Id. */
+  int O = 28;
+  /** RegularExpression Id. */
+  int S = 29;
+  /** RegularExpression Id. */
+  int W = 30;
+  /** RegularExpression Id. */
+  int HASH = 31;
+  /** RegularExpression Id. */
+  int LATITUDE = 32;
+  /** RegularExpression Id. */
+  int LONGITUDE = 33;
 
   /** Lexical state. */
   int DEFAULT = 0;
   /** Lexical state. */
-  int A = 1;
+  int ERR = 1;
   /** Lexical state. */
-  int END = 2;
+  int RAUTE = 2;
+  /** Lexical state. */
+  int BREIT = 3;
+  /** Lexical state. */
+  int LAENG = 4;
+  /** Lexical state. */
+  int END = 5;
+  /** Lexical state. */
+  int WRONG = 6;
+  /** Lexical state. */
+  int RIGHT = 7;
 
   /** Literal token values. */
   String[] tokenImage = {
@@ -26,13 +92,35 @@ public interface HilferufParserConstants {
     "\"\\t\"",
     "\"\\n\"",
     "\"\\r\"",
-    "\"a\"",
-    "\"b\"",
-    "\"a\"",
-    "\"b\"",
-    "\"a\"",
-    "\"b\"",
-    "\";\"",
+    "\"._#\"",
+    "\"_...#\"",
+    "\"_._.#\"",
+    "\"_..#\"",
+    "\".#\"",
+    "\".._.#\"",
+    "\"__.#\"",
+    "\"....#\"",
+    "\"..#\"",
+    "\".___#\"",
+    "\"_._#\"",
+    "\"._..#\"",
+    "\"__#\"",
+    "\".__.#\"",
+    "\"__._#\"",
+    "\"._.#\"",
+    "\"_#\"",
+    "\".._#\"",
+    "\"..._#\"",
+    "\"_..._#\"",
+    "\"_.__#\"",
+    "\"__..#\"",
+    "\"_.#\"",
+    "\"___#\"",
+    "\"...#\"",
+    "\".__#\"",
+    "\"#\"",
+    "<LATITUDE>",
+    "<LONGITUDE>",
   };
 
 }
