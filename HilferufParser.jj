@@ -18,19 +18,19 @@ options {
   FORCE_LA_CHECK = false;
 }
  
-PARSER_BEGIN(Example)
+PARSER_BEGIN(HilferufParser)
  
-public class Example {
+public class HilferufParser {
  
   public static void main(String args[]) throws ParseException {
     System.out.println("Beenden Sie die Eingabe durch Return und dann Ctrl-Z (Windows) bzw. Ctrl-D (Unix):");
-    Example parser = new Example(System.in);
+    HilferufParser parser = new HilferufParser(System.in);
     parser.Input();
   }
  
 }
  
-PARSER_END(Example)
+PARSER_END(HilferufParser)
  
 SKIP :
 {
@@ -71,21 +71,17 @@ SKIP :
 {
     <LONGITUDE>: RAUTE
 |    <WRONG>: ERR
-|    <HASH>: SOSCHEIß
+|    <HASH>: END
 }
  
+ <END> MORE:
+ {
+ <WRONG>: END
+ | <HASH>: END
+ | <LONGITUDE>: END
+ | <LATITUDE>: END
+ }
  
-<END> MORE :
-{
-  "a" : End
-| "b" : End 
-}
- 
- 
-<END> TOKEN :
-{
-  <Wort : "."> : DEFAULT
-}
 <WRONG> TOKEN :
 {
 <A : "._#">     
@@ -118,13 +114,13 @@ SKIP :
 |<S :"...#"> 
 |<W : ".__#">
 |<HASH: "#"> 
-|<LATITUDE: ^(?:90(?:(?:\°0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\°[0-9]{1,2}\.[0-9]{1,3})?)\#)$ >
-|<LONGITUDE: ^(?:180(?:(?:\°0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\°[0-9]{1,2}\.[0-9]{1,3})?)\#)$>
+|<LATITUDE: ["0"-"9"]"°"["0"-"9"]>
+|<LONGITUDE: ["0"-"9"]"°"["0"-"9"]>
 }
  
 void Input() :
 {}
 {
-  ((<Latitude><S|N><Longitude><O|W>)((<S>{n})<O>(<S>{n}))) <EOF>
+  ((<Latitude><S>|<N><Longitude><O>|<W>)((<S>)<O>(<S>))) <EOF>
 }
  
