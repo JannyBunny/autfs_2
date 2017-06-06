@@ -121,6 +121,6 @@ SKIP :
 void Input() :
 {}
 {
-  ((<Latitude><S>|<N><Longitude><O>|<W>)((<S>)<O>(<S>))) <EOF>
+  ((<LATITUDE><S>|<N><LONGITUDE><O>|<W>)((<S>)<O>(<S>))) <EOF>
 }
  
