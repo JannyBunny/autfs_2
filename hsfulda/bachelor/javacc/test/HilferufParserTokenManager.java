@@ -34,12 +34,11 @@ static private int jjMoveStringLiteralDfa0_0(){
       case 35:
          return jjStopAtPos(0, 31);
       case 46:
-         jjmatchedKind = 34;
          return jjMoveStringLiteralDfa1_0(0x60d57620L);
       case 95:
          return jjMoveStringLiteralDfa1_0(0x1f2a89c0L);
       case 176:
-         return jjStopAtPos(0, 33);
+         return jjStopAtPos(0, 34);
       default :
       debugStream.println("   No string literal matches possible.");
          return jjMoveNfa_0(0, 0);
@@ -242,7 +241,7 @@ static private int jjMoveStringLiteralDfa5_0(long old0, long active0){
 static private int jjMoveNfa_0(int startState, int curPos)
 {
    int startsAt = 0;
-   jjnewStateCnt = 1;
+   jjnewStateCnt = 3;
    int i = 1;
    jjstateSet[0] = startState;
       debugStream.println("   Starting NFA to match one of : " + jjKindsForStateVector(curLexState, jjstateSet, 0, 1));
@@ -260,7 +259,18 @@ static private int jjMoveNfa_0(int startState, int curPos)
             switch(jjstateSet[--i])
             {
                case 0:
-                  if ((0x3ff000000000000L & l) != 0L)
+                  if ((0x3ff000000000000L & l) == 0L)
+                     break;
+                  if (kind > 33)
+                     kind = 33;
+                  jjstateSet[jjnewStateCnt++] = 1;
+                  break;
+               case 1:
+                  if (curChar == 46)
+                     jjstateSet[jjnewStateCnt++] = 2;
+                  break;
+               case 2:
+                  if ((0x3ff000000000000L & l) != 0L && kind > 32)
                      kind = 32;
                   break;
                default : break;
@@ -299,7 +309,7 @@ static private int jjMoveNfa_0(int startState, int curPos)
       ++curPos;
       if (jjmatchedKind != 0 && jjmatchedKind != 0x7fffffff)
          debugStream.println("   Currently matched the first " + (jjmatchedPos + 1) + " characters as a " + tokenImage[jjmatchedKind] + " token.");
-      if ((i = jjnewStateCnt) == (startsAt = 1 - (jjnewStateCnt = startsAt)))
+      if ((i = jjnewStateCnt) == (startsAt = 3 - (jjnewStateCnt = startsAt)))
          return curPos;
       debugStream.println("   Possible kinds of longer matches : " + jjKindsForStateVector(curLexState, jjstateSet, startsAt, i));
       try { curChar = input_stream.readChar(); }
@@ -318,7 +328,7 @@ public static final String[] jjstrLiteralImages = {
 "\137\137\43", "\56\137\137\56\43", "\137\137\56\137\43", "\56\137\56\43", "\137\43", 
 "\56\56\137\43", "\56\56\56\137\43", "\137\56\56\56\137\43", "\137\56\137\137\43", 
 "\137\137\56\56\43", "\137\56\43", "\137\137\137\43", "\56\56\56\43", "\56\137\137\43", "\43", null, 
-"\260", "\56", };
+null, "\260", };
 static protected Token jjFillToken()
 {
    final Token t;
@@ -428,11 +438,15 @@ public static Token getNextToken()
 protected static final int[][][] statesForState = {
  {
    { 0 },
+   { 1 },
+   { 2 },
 },
 
 };
 protected static final int[][] kindForState = {
 { 
+  32, 
+  32, 
   32, }
 };
   static int kindCnt = 0;
@@ -535,7 +549,7 @@ static private void jjCheckNAddTwoStates(int state1, int state2)
   {
     int i;
     jjround = 0x80000001;
-    for (i = 1; i-- > 0;)
+    for (i = 3; i-- > 0;)
       jjrounds[i] = 0x80000000;
   }
 
@@ -567,8 +581,8 @@ static final long[] jjtoSkip = {
 };
     static protected SimpleCharStream  input_stream;
 
-    static private final int[] jjrounds = new int[1];
-    static private final int[] jjstateSet = new int[2 * 1];
+    static private final int[] jjrounds = new int[3];
+    static private final int[] jjstateSet = new int[2 * 3];
 
     
     static protected char curChar;

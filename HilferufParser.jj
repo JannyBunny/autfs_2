@@ -69,13 +69,13 @@ TOKEN :
 |<S :"...#"> 
 |<W : ".__#">
 |<HASH: "#"> 
+|<PUNKT: ["0"-"9"]"."["0"-"9"]>
 |<ZAHL: ["0"-"9"]>
 |<GRAD: "°">
-|<PUNKT: ".">
 }
 
 void Input() :
 {}
 {
-	(  (<ZAHL>)+<GRAD>(<ZAHL>)+<S>|<N>(<ZAHL>)+<PUNKT>(<ZAHL>)+<O>|<W>((<S>)<O>(<S>) ) ) <EOF>
+	(  <HASH><HASH>(<ZAHL>)+ <GRAD>(<ZAHL>)+ <PUNKT>(<ZAHL>)+ <S>|<N>(<ZAHL>)+ <PUNKT>(<ZAHL>)+ <O>|<W> ( (<S>)<O>(<S>) ) ) <EOF>
 }

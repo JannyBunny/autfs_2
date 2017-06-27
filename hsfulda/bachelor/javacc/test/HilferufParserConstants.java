@@ -64,11 +64,11 @@ public interface HilferufParserConstants {
   /** RegularExpression Id. */
   int HASH = 31;
   /** RegularExpression Id. */
-  int ZAHL = 32;
+  int PUNKT = 32;
   /** RegularExpression Id. */
-  int GRAD = 33;
+  int ZAHL = 33;
   /** RegularExpression Id. */
-  int PUNKT = 34;
+  int GRAD = 34;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -107,9 +107,9 @@ public interface HilferufParserConstants {
     "\"...#\"",
     "\".__#\"",
     "\"#\"",
+    "<PUNKT>",
     "<ZAHL>",
     "\"\\u00b0\"",
-    "\".\"",
   };
 
 }
