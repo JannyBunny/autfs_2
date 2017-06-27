@@ -3,9 +3,9 @@ options {
   CHOICE_AMBIGUITY_CHECK = 2;
   OTHER_AMBIGUITY_CHECK = 1;
   STATIC = true;
-  DEBUG_PARSER = false;
+  DEBUG_PARSER = true;
   DEBUG_LOOKAHEAD = false;
-  DEBUG_TOKEN_MANAGER = false;
+  DEBUG_TOKEN_MANAGER = true;
   ERROR_REPORTING = true;
   JAVA_UNICODE_ESCAPE = false;
   UNICODE_INPUT = false;
@@ -40,49 +40,7 @@ SKIP :
 | "\r"
 }
  
-<DEFAULT> MORE : 
-{ 
-    <LATITUDE>: BREIT
-|   <WRONG> : ERR
-|    <HASH> : RAUTE  
-}
- 
-<ERR> MORE:
-{
-    <RIGHT>: ERR
-|    <WRONG>: ERR
-|    <HASH>: DEFAULT
-}
-<RAUTE> MORE:
-{
-    <RIGHT>: RAUTE
-|    <WRONG>: RAUTE
-|    <HASH>: DEFAULT
-}
- 
-<BREIT> MORE:
-{
-    <LONGITUDE>: LAENG
-|    <WRONG>: ERR
-|    <HASH>: DEFAULT
-}
- 
-<LAENG> MORE:
-{
-    <LONGITUDE>: RAUTE
-|    <WRONG>: ERR
-|    <HASH>: END
-}
- 
- <END> MORE:
- {
- <WRONG>: END
- | <HASH>: END
- | <LONGITUDE>: END
- | <LATITUDE>: END
- }
- 
-<WRONG> TOKEN :
+TOKEN :
 {
 <A : "._#">     
 |<B : "_...#"> 
@@ -106,11 +64,7 @@ SKIP :
 |<X : "_..._#"> 
 |<Y : "_.__#">
 |<Z : "__..#"> 
-}
-
-<RIGHT> TOKEN :
-{
-<N : "_.#"> 
+|<N : "_.#"> 
 |<O : "___#"> 
 |<S :"...#"> 
 |<W : ".__#">
