@@ -64,26 +64,14 @@ public interface HilferufParserConstants {
   /** RegularExpression Id. */
   int HASH = 31;
   /** RegularExpression Id. */
-  int LATITUDE = 32;
+  int ZAHL = 32;
   /** RegularExpression Id. */
-  int LONGITUDE = 33;
+  int GRAD = 33;
+  /** RegularExpression Id. */
+  int PUNKT = 34;
 
   /** Lexical state. */
   int DEFAULT = 0;
-  /** Lexical state. */
-  int ERR = 1;
-  /** Lexical state. */
-  int RAUTE = 2;
-  /** Lexical state. */
-  int BREIT = 3;
-  /** Lexical state. */
-  int LAENG = 4;
-  /** Lexical state. */
-  int END = 5;
-  /** Lexical state. */
-  int WRONG = 6;
-  /** Lexical state. */
-  int RIGHT = 7;
 
   /** Literal token values. */
   String[] tokenImage = {
@@ -119,8 +107,9 @@ public interface HilferufParserConstants {
     "\"...#\"",
     "\".__#\"",
     "\"#\"",
-    "<LATITUDE>",
-    "<LONGITUDE>",
+    "<ZAHL>",
+    "\"\\u00b0\"",
+    "\".\"",
   };
 
 }
