@@ -77,5 +77,5 @@ TOKEN :
 void Input() :
 {}
 {
-	(  <HASH><HASH>(<ZAHL>)+ <GRAD>(<ZAHL>)+ <PUNKT>(<ZAHL>)+ <S>|<N>(<ZAHL>)+ <PUNKT>(<ZAHL>)+ <O>|<W> ( (<S>)<O>(<S>) ) ) <EOF>
+	(  <HASH> <HASH>(<ZAHL>)+ <GRAD>(<ZAHL>)+ <PUNKT>(<ZAHL>)+ <S>|<N>(<ZAHL>)+ <PUNKT>(<ZAHL>)+ <O>|<W> ( (<S>)<O>(<S>) ) ) <EOF>
 }
