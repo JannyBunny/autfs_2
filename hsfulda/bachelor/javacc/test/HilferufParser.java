@@ -82,6 +82,7 @@ public class HilferufParser implements HilferufParserConstants {
         jj_consume_token(-1);
         throw new ParseException();
       }
+      jj_consume_token(36);
       ES();
       jj_consume_token(36);
     } finally {
