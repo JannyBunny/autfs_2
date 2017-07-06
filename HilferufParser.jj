@@ -78,7 +78,14 @@ TOKEN :
 void Input() :
 {}
 {
-	(  ("#"|"##")?<ZAHLGRAD><MINPUNKTSEK>("#")(<S>|<N>)(<ZAHLGRAD>|<ZAHLGRADBREITE>)<MINPUNKTSEK>("#")(<O>|<W>)("#") ES() ("#") (<A>|<B>|<C>|<D>|<E>|<F>|<G>|<H>|<I>|<J>|<K>|<L>|<M>|<N>|<O>|<P>|<Q>|<R>|<S>|<T>|<U>|<V>|<W>|<X>|<Y>|<Z>)* <EOF>  )
+	( 
+	(<A>|<B>|<C>|<D>|<E>|<F>|<G>|<H>|<I>|<J>|<K>|<L>|<M>|<N>|<O>|<P>|<Q>|<R>|<S>|<T>|<U>|<V>|<W>|<X>|<Y>|<Z>)* 
+	
+	("#"|"##")?<ZAHLGRAD><MINPUNKTSEK>("#")(<S>|<N>)(<ZAHLGRAD>|<ZAHLGRADBREITE>)<MINPUNKTSEK>("#")(<O>|<W>)("#") ES() ("#") 
+	
+	(<A>|<B>|<C>|<D>|<E>|<F>|<G>|<H>|<I>|<J>|<K>|<L>|<M>|<N>|<O>|<P>|<Q>|<R>|<S>|<T>|<U>|<V>|<W>|<X>|<Y>|<Z>|"#")* 
+	
+	<EOF>  )
 }
 
 void ES() :
