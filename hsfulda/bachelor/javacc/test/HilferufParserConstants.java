@@ -114,7 +114,6 @@ public interface HilferufParserConstants {
     "\"...#___#...#\"",
     "<ZAHL>",
     "\"#\"",
-    "\"##\"",
   };
 
 }

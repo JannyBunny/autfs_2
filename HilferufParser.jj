@@ -79,9 +79,9 @@ void Input() :
 {}
 {
 	( 
-	(<A>|<B>|<C>|<D>|<E>|<F>|<G>|<H>|<I>|<J>|<K>|<L>|<M>|<N>|<O>|<P>|<Q>|<R>|<S>|<T>|<U>|<V>|<W>|<X>|<Y>|<Z>)* 
+	(<A>|<B>|<C>|<D>|<E>|<F>|<G>|<H>|<I>|<J>|<K>|<L>|<M>|<N>|<O>|<P>|<Q>|<R>|<S>|<T>|<U>|<V>|<W>|<X>|<Y>|<Z>|"#")* 
 	
-	("#"|"##")?<ZAHLGRAD><MINPUNKTSEK>("#")(<S>|<N>)(<ZAHLGRAD>|<ZAHLGRADBREITE>)<MINPUNKTSEK>("#")(<O>|<W>)("#") ES() ("#") 
+	<ZAHLGRAD><MINPUNKTSEK>("#")(<S>|<N>)(<ZAHLGRAD>|<ZAHLGRADBREITE>)<MINPUNKTSEK>("#")(<O>|<W>)("#") ES() ("#") 
 	
 	(<A>|<B>|<C>|<D>|<E>|<F>|<G>|<H>|<I>|<J>|<K>|<L>|<M>|<N>|<O>|<P>|<Q>|<R>|<S>|<T>|<U>|<V>|<W>|<X>|<Y>|<Z>|"#")* 
 	
