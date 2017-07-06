@@ -67,6 +67,7 @@ public class HilferufParser implements HilferufParserConstants {
         throw new ParseException();
       }
       jj_consume_token(MINPUNKTSEK);
+      jj_consume_token(36);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case O:{
         jj_consume_token(O);
