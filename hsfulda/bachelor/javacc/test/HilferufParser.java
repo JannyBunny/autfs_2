@@ -81,9 +81,34 @@ public class HilferufParser implements HilferufParserConstants {
         jj_consume_token(-1);
         throw new ParseException();
       }
-      jj_consume_token(SOS);
+      ES();
+      jj_consume_token(37);
     } finally {
       trace_return("Input");
+    }
+  }
+
+  static final public void ES() throws ParseException {
+    trace_call("ES");
+    try {
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case S:{
+        jj_consume_token(S);
+        ES();
+        jj_consume_token(S);
+        break;
+        }
+      case SOS:{
+        jj_consume_token(SOS);
+        break;
+        }
+      default:
+        jj_la1[5] = jj_gen;
+        jj_consume_token(-1);
+        throw new ParseException();
+      }
+    } finally {
+      trace_return("ES");
     }
   }
 
@@ -97,7 +122,7 @@ public class HilferufParser implements HilferufParserConstants {
   static public Token jj_nt;
   static private int jj_ntk;
   static private int jj_gen;
-  static final private int[] jj_la1 = new int[5];
+  static final private int[] jj_la1 = new int[6];
   static private int[] jj_la1_0;
   static private int[] jj_la1_1;
   static {
@@ -105,10 +130,10 @@ public class HilferufParser implements HilferufParserConstants {
       jj_la1_init_1();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x0,0x0,0x28000000,0x80000000,0x50000000,};
+      jj_la1_0 = new int[] {0x0,0x0,0x28000000,0x80000000,0x50000000,0x20000000,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x30,0x30,0x0,0x1,0x0,};
+      jj_la1_1 = new int[] {0x30,0x30,0x0,0x1,0x0,0x4,};
    }
 
   /** Constructor with InputStream. */
@@ -129,7 +154,7 @@ public class HilferufParser implements HilferufParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 5; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 6; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -143,7 +168,7 @@ public class HilferufParser implements HilferufParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 5; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 6; i++) jj_la1[i] = -1;
   }
 
   /** Constructor. */
@@ -160,7 +185,7 @@ public class HilferufParser implements HilferufParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 5; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 6; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -170,7 +195,7 @@ public class HilferufParser implements HilferufParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 5; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 6; i++) jj_la1[i] = -1;
   }
 
   /** Constructor with generated Token Manager. */
@@ -186,7 +211,7 @@ public class HilferufParser implements HilferufParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 5; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 6; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -195,7 +220,7 @@ public class HilferufParser implements HilferufParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 5; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 6; i++) jj_la1[i] = -1;
   }
 
   static private Token jj_consume_token(int kind) throws ParseException {
@@ -253,7 +278,7 @@ public class HilferufParser implements HilferufParserConstants {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
     }
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
       if (jj_la1[i] == jj_gen) {
         for (int j = 0; j < 32; j++) {
           if ((jj_la1_0[i] & (1<<j)) != 0) {

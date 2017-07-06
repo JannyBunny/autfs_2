@@ -78,5 +78,11 @@ TOKEN :
 void Input() :
 {}
 {
-	(  ("#"|"##")?<ZAHLGRAD><MINPUNKTSEK>("#")(<S>|<N>)(<ZAHLGRAD>|<ZAHLGRADBREITE>)<MINPUNKTSEK>(<O>|<W>)<SOS>  )
+	(  ("#"|"##")?<ZAHLGRAD><MINPUNKTSEK>("#")(<S>|<N>)(<ZAHLGRAD>|<ZAHLGRADBREITE>)<MINPUNKTSEK>(<O>|<W>)ES()"##"  )
+}
+
+void ES() :
+{}
+{
+	<S> ES() <S> |<SOS>
 }
