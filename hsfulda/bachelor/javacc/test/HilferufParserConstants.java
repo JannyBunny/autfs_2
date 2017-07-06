@@ -66,13 +66,15 @@ public interface HilferufParserConstants {
   /** RegularExpression Id. */
   int ZAHLGRADBREITE = 32;
   /** RegularExpression Id. */
-  int MINPUNKTSEK = 33;
+  int MINPUNKT = 33;
   /** RegularExpression Id. */
-  int SOS = 34;
+  int SEK = 34;
   /** RegularExpression Id. */
-  int ZAHL = 35;
+  int SOS = 35;
   /** RegularExpression Id. */
-  int NULL = 36;
+  int ZAHL = 36;
+  /** RegularExpression Id. */
+  int NULL = 37;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -112,10 +114,11 @@ public interface HilferufParserConstants {
     "\".__#\"",
     "<ZAHLGRAD>",
     "<ZAHLGRADBREITE>",
-    "<MINPUNKTSEK>",
+    "<MINPUNKT>",
+    "<SEK>",
     "\"...#___#...#\"",
     "<ZAHL>",
-    "\"0\"",
+    "<NULL>",
     "\"#\"",
   };
 
