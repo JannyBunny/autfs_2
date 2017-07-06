@@ -85,6 +85,7 @@ public class HilferufParser implements HilferufParserConstants {
       jj_consume_token(36);
       ES();
       jj_consume_token(36);
+      jj_consume_token(0);
     } finally {
       trace_return("Input");
     }
