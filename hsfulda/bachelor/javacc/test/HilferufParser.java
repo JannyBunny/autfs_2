@@ -37,6 +37,7 @@ public class HilferufParser implements HilferufParserConstants {
       }
       jj_consume_token(ZAHLGRAD);
       jj_consume_token(MINPUNKTSEK);
+      jj_consume_token(12);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case S:{
         jj_consume_token(S);

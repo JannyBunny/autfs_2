@@ -356,7 +356,7 @@ static final long[] jjbitVec0 = {
 static private int jjMoveNfa_0(int startState, int curPos)
 {
    int startsAt = 0;
-   jjnewStateCnt = 13;
+   jjnewStateCnt = 12;
    int i = 1;
    jjstateSet[0] = startState;
       debugStream.println("   Starting NFA to match one of : " + jjKindsForStateVector(curLexState, jjstateSet, 0, 1));
@@ -405,25 +405,21 @@ static private int jjMoveNfa_0(int startState, int curPos)
                   break;
                case 7:
                   if (curChar == 46)
-                     { jjCheckNAddTwoStates(8, 10); }
+                     { jjCheckNAddTwoStates(8, 9); }
                   break;
                case 8:
-                  if ((0x3ff000000000000L & l) != 0L)
-                     jjstateSet[jjnewStateCnt++] = 9;
-                  break;
-               case 9:
-                  if (curChar == 35)
+                  if ((0x3ff000000000000L & l) != 0L && kind > 10)
                      kind = 10;
                   break;
-               case 10:
+               case 9:
                   if ((0x3fe000000000000L & l) != 0L)
-                     { jjCheckNAddTwoStates(8, 11); }
+                     { jjCheckNAddTwoStates(8, 10); }
                   break;
-               case 11:
+               case 10:
                   if ((0x3ff000000000000L & l) != 0L)
                      { jjCheckNAdd(8); }
                   break;
-               case 12:
+               case 11:
                   if ((0x3ff000000000000L & l) != 0L)
                      { jjCheckNAddTwoStates(2, 7); }
                   break;
@@ -467,7 +463,7 @@ static private int jjMoveNfa_0(int startState, int curPos)
       ++curPos;
       if (jjmatchedKind != 0 && jjmatchedKind != 0x7fffffff)
          debugStream.println("   Currently matched the first " + (jjmatchedPos + 1) + " characters as a " + tokenImage[jjmatchedKind] + " token.");
-      if ((i = jjnewStateCnt) == (startsAt = 13 - (jjnewStateCnt = startsAt)))
+      if ((i = jjnewStateCnt) == (startsAt = 12 - (jjnewStateCnt = startsAt)))
          return curPos;
       debugStream.println("   Possible kinds of longer matches : " + jjKindsForStateVector(curLexState, jjstateSet, startsAt, i));
       try { curChar = input_stream.readChar(); }
@@ -590,19 +586,18 @@ public static Token getNextToken()
 
 protected static final int[][][] statesForState = {
  {
-   { 0, 4, 5, 12, },
+   { 0, 4, 5, 11, },
    { 1 },
    { 2 },
    { 3 },
-   { 0, 4, 5, 12, },
-   { 0, 4, 5, 12, },
+   { 0, 4, 5, 11, },
+   { 0, 4, 5, 11, },
    { 6 },
    { 7 },
    { 8 },
    { 9 },
    { 10 },
-   { 11 },
-   { 0, 4, 5, 12, },
+   { 0, 4, 5, 11, },
 },
 
 };
@@ -613,7 +608,6 @@ protected static final int[][] kindForState = {
   9, 
   9, 
   9, 
-  10, 
   10, 
   10, 
   10, 
@@ -722,7 +716,7 @@ static private void jjCheckNAddTwoStates(int state1, int state2)
   {
     int i;
     jjround = 0x80000001;
-    for (i = 13; i-- > 0;)
+    for (i = 12; i-- > 0;)
       jjrounds[i] = 0x80000000;
   }
 
@@ -754,8 +748,8 @@ static final long[] jjtoSkip = {
 };
     static protected SimpleCharStream  input_stream;
 
-    static private final int[] jjrounds = new int[13];
-    static private final int[] jjstateSet = new int[2 * 13];
+    static private final int[] jjrounds = new int[12];
+    static private final int[] jjstateSet = new int[2 * 12];
 
     
     static protected char curChar;
