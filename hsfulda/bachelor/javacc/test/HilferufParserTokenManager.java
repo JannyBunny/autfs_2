@@ -32,12 +32,12 @@ static private int jjMoveStringLiteralDfa0_0(){
    switch(curChar)
    {
       case 35:
-         jjmatchedKind = 12;
-         return jjMoveStringLiteralDfa1_0(0x2000L);
+         jjmatchedKind = 13;
+         return jjMoveStringLiteralDfa1_0(0x4000L);
       case 46:
-         return jjMoveStringLiteralDfa1_0(0x980L);
+         return jjMoveStringLiteralDfa1_0(0x1300L);
       case 95:
-         return jjMoveStringLiteralDfa1_0(0x60L);
+         return jjMoveStringLiteralDfa1_0(0xe0L);
       default :
       debugStream.println("   No string literal matches possible.");
          return jjMoveNfa_0(0, 0);
@@ -60,13 +60,13 @@ static private int jjMoveStringLiteralDfa1_0(long active0){
    switch(curChar)
    {
       case 35:
-         if ((active0 & 0x2000L) != 0L)
-            return jjStopAtPos(1, 13);
+         if ((active0 & 0x4000L) != 0L)
+            return jjStopAtPos(1, 14);
          break;
       case 46:
-         return jjMoveStringLiteralDfa2_0(active0, 0x8a0L);
+         return jjMoveStringLiteralDfa2_0(active0, 0x1120L);
       case 95:
-         return jjMoveStringLiteralDfa2_0(active0, 0x140L);
+         return jjMoveStringLiteralDfa2_0(active0, 0x2c0L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -96,9 +96,9 @@ static private int jjMoveStringLiteralDfa2_0(long old0, long active0){
             return jjStopAtPos(2, 5);
          break;
       case 46:
-         return jjMoveStringLiteralDfa3_0(active0, 0x880L);
+         return jjMoveStringLiteralDfa3_0(active0, 0x1140L);
       case 95:
-         return jjMoveStringLiteralDfa3_0(active0, 0x140L);
+         return jjMoveStringLiteralDfa3_0(active0, 0x280L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -127,13 +127,15 @@ static private int jjMoveStringLiteralDfa3_0(long old0, long active0){
          if ((active0 & 0x40L) != 0L)
             return jjStopAtPos(3, 6);
          else if ((active0 & 0x80L) != 0L)
+            return jjStopAtPos(3, 7);
+         else if ((active0 & 0x100L) != 0L)
          {
-            jjmatchedKind = 7;
+            jjmatchedKind = 8;
             jjmatchedPos = 3;
          }
-         else if ((active0 & 0x100L) != 0L)
-            return jjStopAtPos(3, 8);
-         return jjMoveStringLiteralDfa4_0(active0, 0x800L);
+         else if ((active0 & 0x200L) != 0L)
+            return jjStopAtPos(3, 9);
+         return jjMoveStringLiteralDfa4_0(active0, 0x1000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -159,7 +161,7 @@ static private int jjMoveStringLiteralDfa4_0(long old0, long active0){
    switch(curChar)
    {
       case 95:
-         return jjMoveStringLiteralDfa5_0(active0, 0x800L);
+         return jjMoveStringLiteralDfa5_0(active0, 0x1000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -185,7 +187,7 @@ static private int jjMoveStringLiteralDfa5_0(long old0, long active0){
    switch(curChar)
    {
       case 95:
-         return jjMoveStringLiteralDfa6_0(active0, 0x800L);
+         return jjMoveStringLiteralDfa6_0(active0, 0x1000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -211,7 +213,7 @@ static private int jjMoveStringLiteralDfa6_0(long old0, long active0){
    switch(curChar)
    {
       case 95:
-         return jjMoveStringLiteralDfa7_0(active0, 0x800L);
+         return jjMoveStringLiteralDfa7_0(active0, 0x1000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -237,7 +239,7 @@ static private int jjMoveStringLiteralDfa7_0(long old0, long active0){
    switch(curChar)
    {
       case 35:
-         return jjMoveStringLiteralDfa8_0(active0, 0x800L);
+         return jjMoveStringLiteralDfa8_0(active0, 0x1000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -263,7 +265,7 @@ static private int jjMoveStringLiteralDfa8_0(long old0, long active0){
    switch(curChar)
    {
       case 46:
-         return jjMoveStringLiteralDfa9_0(active0, 0x800L);
+         return jjMoveStringLiteralDfa9_0(active0, 0x1000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -289,7 +291,7 @@ static private int jjMoveStringLiteralDfa9_0(long old0, long active0){
    switch(curChar)
    {
       case 46:
-         return jjMoveStringLiteralDfa10_0(active0, 0x800L);
+         return jjMoveStringLiteralDfa10_0(active0, 0x1000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -315,7 +317,7 @@ static private int jjMoveStringLiteralDfa10_0(long old0, long active0){
    switch(curChar)
    {
       case 46:
-         return jjMoveStringLiteralDfa11_0(active0, 0x800L);
+         return jjMoveStringLiteralDfa11_0(active0, 0x1000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -341,8 +343,8 @@ static private int jjMoveStringLiteralDfa11_0(long old0, long active0){
    switch(curChar)
    {
       case 35:
-         if ((active0 & 0x800L) != 0L)
-            return jjStopAtPos(11, 11);
+         if ((active0 & 0x1000L) != 0L)
+            return jjStopAtPos(11, 12);
          break;
       default :
       debugStream.println("   No string literal matches possible.");
@@ -408,8 +410,8 @@ static private int jjMoveNfa_0(int startState, int curPos)
                      { jjCheckNAddTwoStates(8, 9); }
                   break;
                case 8:
-                  if ((0x3ff000000000000L & l) != 0L && kind > 10)
-                     kind = 10;
+                  if ((0x3ff000000000000L & l) != 0L && kind > 11)
+                     kind = 11;
                   break;
                case 9:
                   if ((0x3fe000000000000L & l) != 0L)
@@ -447,8 +449,8 @@ static private int jjMoveNfa_0(int startState, int curPos)
             switch(jjstateSet[--i])
             {
                case 2:
-                  if ((jjbitVec0[i2] & l2) != 0L && kind > 9)
-                     kind = 9;
+                  if ((jjbitVec0[i2] & l2) != 0L && kind > 10)
+                     kind = 10;
                   break;
                default : break;
             }
@@ -476,8 +478,9 @@ static final int[] jjnextStates = {
 
 /** Token literal values. */
 public static final String[] jjstrLiteralImages = {
-"", null, null, null, null, "\137\56\43", "\137\137\137\43", "\56\56\56\43", 
-"\56\137\137\43", null, null, "\56\56\56\43\137\137\137\43\56\56\56\43", "\43", "\43\43", };
+"", null, null, null, null, "\137\56\43", "\137\137\56\43", "\137\137\137\43", 
+"\56\56\56\43", "\56\137\137\43", null, null, "\56\56\56\43\137\137\137\43\56\56\56\43", 
+"\43", "\43\43", };
 static protected Token jjFillToken()
 {
    final Token t;
@@ -603,18 +606,18 @@ protected static final int[][][] statesForState = {
 };
 protected static final int[][] kindForState = {
 { 
-  9, 
-  9, 
-  9, 
-  9, 
-  9, 
   10, 
   10, 
   10, 
   10, 
   10, 
-  10, 
-  9, }
+  11, 
+  11, 
+  11, 
+  11, 
+  11, 
+  11, 
+  10, }
 };
   static int kindCnt = 0;
   protected static final String jjKindsForBitVector(int i, long vec)
@@ -639,7 +642,7 @@ protected static final int[][] kindForState = {
 
   protected static final String jjKindsForStateVector(int lexState, int[] vec, int start, int end)
   {
-    boolean[] kindDone = new boolean[14];
+    boolean[] kindDone = new boolean[15];
     String retVal = "";
     int cnt = 0;
     for (int i = start; i < end; i++)
@@ -741,7 +744,7 @@ public static final String[] lexStateNames = {
    "DEFAULT",
 };
 static final long[] jjtoToken = {
-   0x3fe1L, 
+   0x7fe1L, 
 };
 static final long[] jjtoSkip = {
    0x1eL, 
