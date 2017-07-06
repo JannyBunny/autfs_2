@@ -13,6 +13,10 @@ private static final int jjStopStringLiteralDfa_0(int pos, long active0){
       debugStream.println("   No more string literal token matches are possible.");
    switch (pos)
    {
+      case 0:
+         if ((active0 & 0x1000000000L) != 0L)
+            return 27;
+         return -1;
       default :
          return -1;
    }
@@ -32,9 +36,11 @@ static private int jjMoveStringLiteralDfa0_0(){
    switch(curChar)
    {
       case 35:
-         return jjStopAtPos(0, 36);
+         return jjStopAtPos(0, 37);
       case 46:
          return jjMoveStringLiteralDfa1_0(0x460d57620L);
+      case 48:
+         return jjStartNfaWithStates_0(0, 36, 27);
       case 95:
          return jjMoveStringLiteralDfa1_0(0x1f2a89c0L);
       default :
@@ -399,6 +405,17 @@ static private int jjMoveStringLiteralDfa11_0(long old0, long active0){
    }
    return jjStartNfa_0(10, active0);
 }
+static private int jjStartNfaWithStates_0(int pos, int kind, int state)
+{
+   jjmatchedKind = kind;
+   jjmatchedPos = pos;
+   debugStream.println("   No more string literal token matches are possible.");
+   debugStream.println("   Currently matched the first " + (jjmatchedPos + 1) + " characters as a " + tokenImage[jjmatchedKind] + " token.");
+   try { curChar = input_stream.readChar(); }
+   catch(java.io.IOException e) { return pos + 1; }
+   debugStream.println("Current character : " + TokenMgrError.addEscapes(String.valueOf(curChar)) + " (" + (int)curChar + ") at line " + input_stream.getEndLine() + " column " + input_stream.getEndColumn());
+   return jjMoveNfa_0(state, pos + 1);
+}
 static final long[] jjbitVec0 = {
    0x0L, 0x0L, 0x1000000000000L, 0x0L
 };
@@ -422,6 +439,12 @@ static private int jjMoveNfa_0(int startState, int curPos)
          {
             switch(jjstateSet[--i])
             {
+               case 27:
+                  if ((0x3ff000000000000L & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 20;
+                  else if (curChar == 46)
+                     { jjCheckNAddTwoStates(16, 17); }
+                  break;
                case 0:
                   if ((0x3ff000000000000L & l) != 0L)
                      { jjCheckNAddStates(0, 2); }
@@ -560,6 +583,7 @@ static private int jjMoveNfa_0(int startState, int curPos)
          {
             switch(jjstateSet[--i])
             {
+               case 27:
                case 2:
                   if ((jjbitVec0[i2] & l2) != 0L && kind > 31)
                      kind = 31;
@@ -601,7 +625,7 @@ public static final String[] jjstrLiteralImages = {
 "\137\137\43", "\56\137\137\56\43", "\137\137\56\137\43", "\56\137\56\43", "\137\43", 
 "\56\56\137\43", "\56\56\56\137\43", "\137\56\56\56\137\43", "\137\56\137\137\43", 
 "\137\137\56\56\43", "\137\56\43", "\137\137\137\43", "\56\56\56\43", "\56\137\137\43", null, null, 
-null, "\56\56\56\43\137\137\137\43\56\56\56\43", null, "\43", };
+null, "\56\56\56\43\137\137\137\43\56\56\56\43", null, "\60", "\43", };
 static protected Token jjFillToken()
 {
    final Token t;
@@ -712,7 +736,7 @@ protected static final int[][][] statesForState = {
  {
    { 0, 4, 5, 8, 13, 14, 23, },
    { 1 },
-   { 2 },
+   { 2, 15, 19, },
    { 3 },
    { 0, 4, 5, 8, 13, 14, 23, },
    { 0, 4, 5, 8, 13, 14, 23, },
@@ -725,11 +749,11 @@ protected static final int[][][] statesForState = {
    { 12 },
    { 0, 4, 5, 8, 13, 14, 23, },
    { 0, 4, 5, 8, 13, 14, 23, },
-   { 15 },
+   { 2, 15, 19, },
    { 16 },
    { 17 },
    { 18 },
-   { 19 },
+   { 2, 15, 19, },
    { 20 },
    { 21 },
    { 22 },
@@ -737,6 +761,7 @@ protected static final int[][][] statesForState = {
    { 24 },
    { 25 },
    { 26 },
+   { 2, 15, 19, },
 },
 
 };
@@ -793,7 +818,7 @@ protected static final int[][] kindForState = {
 
   protected static final String jjKindsForStateVector(int lexState, int[] vec, int start, int end)
   {
-    boolean[] kindDone = new boolean[37];
+    boolean[] kindDone = new boolean[38];
     String retVal = "";
     int cnt = 0;
     for (int i = start; i < end; i++)
@@ -902,7 +927,7 @@ public static final String[] lexStateNames = {
    "DEFAULT",
 };
 static final long[] jjtoToken = {
-   0x1fffffffe1L, 
+   0x3fffffffe1L, 
 };
 static final long[] jjtoSkip = {
    0x1eL, 

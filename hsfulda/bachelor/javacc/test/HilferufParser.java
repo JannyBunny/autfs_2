@@ -41,7 +41,7 @@ public class HilferufParser implements HilferufParserConstants {
         case O:
         case S:
         case W:
-        case 36:{
+        case 37:{
           ;
           break;
           }
@@ -154,8 +154,8 @@ public class HilferufParser implements HilferufParserConstants {
           jj_consume_token(Z);
           break;
           }
-        case 36:{
-          jj_consume_token(36);
+        case 37:{
+          jj_consume_token(37);
           break;
           }
         default:
@@ -166,7 +166,7 @@ public class HilferufParser implements HilferufParserConstants {
       }
       jj_consume_token(ZAHLGRAD);
       jj_consume_token(MINPUNKTSEK);
-      jj_consume_token(36);
+      jj_consume_token(37);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case S:{
         jj_consume_token(S);
@@ -196,7 +196,7 @@ public class HilferufParser implements HilferufParserConstants {
         throw new ParseException();
       }
       jj_consume_token(MINPUNKTSEK);
-      jj_consume_token(36);
+      jj_consume_token(37);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case O:{
         jj_consume_token(O);
@@ -211,9 +211,9 @@ public class HilferufParser implements HilferufParserConstants {
         jj_consume_token(-1);
         throw new ParseException();
       }
-      jj_consume_token(36);
+      jj_consume_token(37);
       ES();
-      jj_consume_token(36);
+      jj_consume_token(37);
       label_2:
       while (true) {
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -243,7 +243,7 @@ public class HilferufParser implements HilferufParserConstants {
         case O:
         case S:
         case W:
-        case 36:{
+        case 37:{
           ;
           break;
           }
@@ -356,8 +356,8 @@ public class HilferufParser implements HilferufParserConstants {
           jj_consume_token(Z);
           break;
           }
-        case 36:{
-          jj_consume_token(36);
+        case 37:{
+          jj_consume_token(37);
           break;
           }
         default:
@@ -417,7 +417,7 @@ public class HilferufParser implements HilferufParserConstants {
       jj_la1_0 = new int[] {0x7fffffe0,0x7fffffe0,0x28000000,0x80000000,0x50000000,0x7fffffe0,0x7fffffe0,0x20000000,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x10,0x10,0x0,0x1,0x0,0x10,0x10,0x4,};
+      jj_la1_1 = new int[] {0x20,0x20,0x0,0x1,0x0,0x20,0x20,0x4,};
    }
 
   /** Constructor with InputStream. */
@@ -557,7 +557,7 @@ public class HilferufParser implements HilferufParserConstants {
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[37];
+    boolean[] la1tokens = new boolean[38];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -574,7 +574,7 @@ public class HilferufParser implements HilferufParserConstants {
         }
       }
     }
-    for (int i = 0; i < 37; i++) {
+    for (int i = 0; i < 38; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

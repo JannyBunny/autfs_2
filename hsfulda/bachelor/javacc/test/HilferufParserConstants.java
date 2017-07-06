@@ -71,6 +71,8 @@ public interface HilferufParserConstants {
   int SOS = 34;
   /** RegularExpression Id. */
   int ZAHL = 35;
+  /** RegularExpression Id. */
+  int NULL = 36;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -113,6 +115,7 @@ public interface HilferufParserConstants {
     "<MINPUNKTSEK>",
     "\"...#___#...#\"",
     "<ZAHL>",
+    "\"0\"",
     "\"#\"",
   };
 
