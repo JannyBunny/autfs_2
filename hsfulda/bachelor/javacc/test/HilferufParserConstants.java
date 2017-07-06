@@ -20,11 +20,9 @@ public interface HilferufParserConstants {
   /** RegularExpression Id. */
   int ZAHLGRAD = 9;
   /** RegularExpression Id. */
-  int MINPUNKT = 10;
+  int MINPUNKTSEK = 10;
   /** RegularExpression Id. */
-  int SEK = 11;
-  /** RegularExpression Id. */
-  int SOS = 12;
+  int SOS = 11;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -41,8 +39,7 @@ public interface HilferufParserConstants {
     "\"...#\"",
     "\".__#\"",
     "<ZAHLGRAD>",
-    "<MINPUNKT>",
-    "<SEK>",
+    "<MINPUNKTSEK>",
     "\"...#___#...#\"",
     "\"#\"",
     "\"##\"",
