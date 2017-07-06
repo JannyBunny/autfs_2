@@ -152,9 +152,9 @@ static private int jjMoveStringLiteralDfa3_0(long old0, long active0){
             return jjStopAtPos(3, 30);
          return jjMoveStringLiteralDfa4_0(active0, 0x800000000L);
       case 46:
-         return jjMoveStringLiteralDfa4_0(active0, 0x50514c0L);
+         return jjMoveStringLiteralDfa4_0(active0, 0x40514c0L);
       case 95:
-         return jjMoveStringLiteralDfa4_0(active0, 0x2884000L);
+         return jjMoveStringLiteralDfa4_0(active0, 0x3884000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -198,13 +198,15 @@ static private int jjMoveStringLiteralDfa4_0(long old0, long active0){
             return jjStopAtPos(4, 19);
          else if ((active0 & 0x800000L) != 0L)
             return jjStopAtPos(4, 23);
+         else if ((active0 & 0x1000000L) != 0L)
+            return jjStopAtPos(4, 24);
          else if ((active0 & 0x2000000L) != 0L)
             return jjStopAtPos(4, 25);
          else if ((active0 & 0x4000000L) != 0L)
             return jjStopAtPos(4, 26);
          break;
       case 95:
-         return jjMoveStringLiteralDfa5_0(active0, 0x801000000L);
+         return jjMoveStringLiteralDfa5_0(active0, 0x800000000L);
       default :
       debugStream.println("   No string literal matches possible.");
          break;
@@ -229,10 +231,6 @@ static private int jjMoveStringLiteralDfa5_0(long old0, long active0){
    debugStream.println("Current character : " + TokenMgrError.addEscapes(String.valueOf(curChar)) + " (" + (int)curChar + ") at line " + input_stream.getEndLine() + " column " + input_stream.getEndColumn());
    switch(curChar)
    {
-      case 35:
-         if ((active0 & 0x1000000L) != 0L)
-            return jjStopAtPos(5, 24);
-         break;
       case 95:
          return jjMoveStringLiteralDfa6_0(active0, 0x800000000L);
       default :
@@ -615,7 +613,7 @@ public static final String[] jjstrLiteralImages = {
 "\137\56\137\56\43", "\137\56\56\43", "\56\43", "\56\56\137\56\43", "\137\137\56\43", 
 "\56\56\56\56\43", "\56\56\43", "\56\137\137\137\43", "\137\56\137\43", "\56\137\56\56\43", 
 "\137\137\43", "\56\137\137\56\43", "\137\137\56\137\43", "\56\137\56\43", "\137\43", 
-"\56\56\137\43", "\56\56\56\137\43", "\137\56\56\56\137\43", "\137\56\137\137\43", 
+"\56\56\137\43", "\56\56\56\137\43", "\137\56\56\137\43", "\137\56\137\137\43", 
 "\137\137\56\56\43", "\137\56\43", "\137\137\137\43", "\56\56\56\43", "\56\137\137\43", null, null, 
 null, null, "\56\56\56\43\137\137\137\43\56\56\56\43", null, null, "\43", };
 static protected Token jjFillToken()
